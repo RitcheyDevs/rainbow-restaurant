@@ -1,0 +1,70 @@
+@import "normalize.css";
+
+body{
+    font-family: MicrosoftJhengHeiRegular;
+    background: #efe9e7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+ul, ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration:none;
+}
+
+/** 表單 **/
+form{
+    font-family: PingFangTC-Light;
+    label{
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    textarea:focus, input:focus, button:focus{
+        outline: none;
+    }
+    input[type="text"], input[type="email"], input[type="number"], input[type="phone"], input[type="password"]{
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        box-shadow: inset 0px 1px 0px 0px #ECECEC;
+        border-radius: 3px;
+        padding: 5px 15px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    button:hover{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+    font-family: PingFangTC-Light;
+    font-size: 16px;
+    color: #4A4A4A;
+}
+
+button{
+    border:none;
+    width: 70px;
+    height: 32px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.35);
+    border-radius: 3px;
+    padding: 0 6px;
+    text-align: center;
+    color: #fff;
+    &[type="submit"]{
+        background: #F56C23;
+    }
+}

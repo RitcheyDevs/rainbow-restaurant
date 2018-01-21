@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel='stylesheet' href='/css/app.css' />
+  </head>
+  <body>
+    <% include ../partials/header %>
+    <% include ../partials/ad %>
+    <main>
+      <div class="login">
+        <h2>Rainbow 餐廳</h2>
+        <p>享受美食好味道</p>
+        <section>
+          <h3>LOGIN</h3>
+          <div class="form">
+            <form action="/">
+              <div class="email">
+                <label for="email">Email Address*</label>
+                <input type="email" name="email" id="email">
+              </div>
+              <div class="password">
+                <label for="password">Password*</label>
+                <input type="text" name="password" id="password">
+              </div>
+              <div>
+                <a href="">忘記密碼？</a>
+              </div>
+              <div class="button">
+                <button type="button">註冊</button>
+                <button type="submit">登入</button>
+              </div>
+            </form> 
+          </div>
+        </section>
+      </div>
+    </main>
+    <% include ../partials/footer %>
+  </body>
+</html>

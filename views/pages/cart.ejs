@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel='stylesheet' href='/css/app.css' />
+  </head>
+  <body>
+    <% include ../partials/header %>
+    <% include ../partials/ad %>
+    <main>
+      <section class="cart">
+        <aside>
+          <h3>線上訂購美食</h3>
+          <ul>
+            <li><a href="">全部 (23)</a></li>
+            <li><a href="">只愛吃薯條 (18)</a></li>
+            <li><a href="">加熱就可食 (1)</a></li>
+            <li><a href="">不敗漢堡系列 (4)</a></li>
+          </ul>
+        </aside>
+        <section>
+          <div class="top">
+            <div class="search">
+              <input type="text" placeholder="請輸入關鍵字">
+              <a href="">搜尋</a>
+            </div>
+            <ul class="cart">
+              <li><a>結帳去</a></li>
+              <li><a>購物車 <span>1</span></a></li>
+            </ul>
+          </div>
+          <div class="content">
+            
+          </div>
+        </section>
+      </section>
+    </main>
+    <% include ../partials/footer %>
+  </body>
+</html>

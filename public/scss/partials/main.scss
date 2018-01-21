@@ -1,0 +1,536 @@
+@import '../helpers/_mixin';
+
+/** main **/
+main{
+    max-width: 1024px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    .features{
+        font-size: 16px;
+        color: #3D1101;
+        padding: 50px 0px;
+        box-sizing: border-box;
+        h2{
+            width: 230px;
+            font-size: 20px;
+            line-height: 32px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+            &:before{
+                content: "";
+                display: block;
+                width: 150px;
+                height: 1px;
+                background: #979797;
+                position: absolute;
+                left: -150px;
+                top: 50%;
+                margin-left: -1px;
+            }
+            &:after{
+                content: "";
+                display: block;
+                width: 150px;
+                height: 1px;
+                background: #979797;
+                position: absolute;
+                right: -150px;
+                top: 50%;
+                margin-left: -1px;
+            }
+        }
+        h3{
+            font-size: 18px;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+        }
+        p{
+            margin: 0;
+            line-height: 1.6em;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            li{
+                width: 260px;
+                text-align: center;
+                img{
+                    border-radius: 50%;
+                    width: 200px;
+                    height: 200px;
+                }
+                p{
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .chef{
+        height: 460px;
+        background: #3D1101;
+        position: relative;
+        display: flex;
+        &:before{
+            content: "";
+            background: #3D1101;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 460px;
+            left: -100%;
+            top: 0;
+        }
+        &:after{
+            content: "";
+            background: #3D1101;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 460px;
+            right: -100%;
+            top: 0;
+        }
+        .img{
+            img{
+                object-fit: cover;
+                width: 470px;
+                height: 460px;
+            }
+        }
+        article{
+            padding: 40px 25px;
+            box-sizing: border-box;
+            color: #EFE9E7;
+            font-size: 16px;
+            h2{
+                font-size: 20px;
+                line-height: 32px;
+            }
+            h3{
+                margin-bottom: 16px;
+            }
+            p{
+                line-height: 1.6em;
+            }
+        }
+    }
+    .customer{
+        color: #3D1101;
+        padding: 50px 0;
+        ul{
+            display: flex;
+            justify-content: space-between;
+            li{
+                display: flex;
+            }
+            img{
+                width: 67px;
+                height: 67px;
+                border-radius: 50%;
+            }
+            article{
+                width: 220px;
+                margin: 15px 0 0 15px;
+            }
+            h3{
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-size: 16px;
+                line-height: 24px;
+            }
+            em{
+                display: block;
+                text-align: right;
+            }
+        }
+        h2{
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 50px;
+        }
+    }
+    .restaurant{
+        box-sizing: border-box;
+        height: 590px;
+        padding: 50px 0;
+        background: rgba(250,250,250,0.70);   
+        position: relative;
+        &:before{
+            content: "";
+            background: rgba(250,250,250,0.70);   
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 590px;
+            left: -100%;
+            top: 0;
+        }
+        &:after{
+            content: "";
+            background: rgba(250,250,250,0.70);   
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 590px;
+            right: -100%;
+            top: 0;
+        }
+        h2{
+            text-align: center;
+            line-height: 1.6em;
+            font-size: 24px;
+            color: #3D1101;
+            margin-bottom: 40px;
+        }
+        &>div{
+            display: flex;
+            justify-content: space-around;
+            .map{
+                iframe{
+                    width: 480px;
+                    height: 386px;
+                }
+            }
+            .form{
+                width: 460px;
+                color: #3D1101;
+                font-size: 14px;
+                div{
+                    margin-bottom: 20px;
+                }
+                label{
+                    display: block;
+                }
+                input+input{
+                    margin-left: 30px;
+                }
+                .button{
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .login{
+        padding: 50px 0;
+        color: #3D1101;
+        text-align: center;
+        h2{
+            font-size: 48px;
+            font-family: NotoSansCJKtc-Black;
+        }
+        &>p{
+            font-size: 20px;
+            font-family: NotoSansCJKtc-Medium;
+        }
+        &>section{
+            width: 300px;
+            height: 275px;
+            margin: 35px auto 0;
+            background: #EFE9E7;
+            box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+            border-top: 3px solid #FF5E45;
+            padding: 15px;
+            box-sizing: border-box;
+            h3{
+                font-family: NotoSansCJKtc-Black;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            .form{
+                font-family: MicrosoftJhengHeiRegular;
+                div{
+                    margin-bottom: 15px;
+                }
+                label{
+                    font-size: 16px;
+                    display: block;
+                    text-align-last: left;
+                }
+                a{
+                    text-align-last: left;
+                    display: block;
+                    color: #FF5E45;
+                    font-size: 14px;
+                }
+                .email{
+                    position: relative;
+                    &:after{
+                        content: "\f003";
+                        font-family: FontAwesome;
+                        font-size: 20px;
+                        color: #9d8880;
+                        display: block;
+                        position: absolute;
+                        left: 5px;
+                        bottom: 4px;
+                    }
+                    input{
+                        padding-left: 25px;
+                    }
+                }
+                .password{
+                    position: relative;
+                    &:after{
+                        content: "\f023";
+                        font-family: FontAwesome;
+                        font-size: 20px;
+                        color: #9d8880;
+                        display: block;
+                        position: absolute;
+                        left: 8px;
+                        bottom: 3px;
+                    }
+                    input{
+                        padding-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .register{
+        padding: 50px 0;
+        color: #3D1101;
+        text-align: center;
+        h2{
+            font-size: 48px;
+            font-family: NotoSansCJKtc-Black;
+        }
+        &>p{
+            font-size: 20px;
+            font-family: NotoSansCJKtc-Medium;
+        }
+        &>section{
+            width: 620px;
+            height: 320px;
+            margin: 35px auto 0;
+            background: #EFE9E7;
+            box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+            border-top: 3px solid #FF5E45;
+            padding: 15px;
+            box-sizing: border-box;
+            h3{
+                font-family: NotoSansCJKtc-Black;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            &>div{
+                display: flex;
+                justify-content:space-around;
+            }
+            .des{
+                width: 285px;
+                text-align: left;
+                h4{
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                }
+                p{
+                    line-height: 1.3em;
+                }
+            }
+            .form{
+                font-family: MicrosoftJhengHeiRegular;
+                width: 285px;
+                div{
+                    margin-bottom: 15px;
+                }
+                label{
+                    font-size: 16px;
+                    display: block;
+                    text-align-last: left;
+                }
+                a{
+                    text-align-last: left;
+                    display: block;
+                    color: #FF5E45;
+                    font-size: 14px;
+                }
+                .email{
+                    position: relative;
+                    &:after{
+                        content: "\f003";
+                        font-family: FontAwesome;
+                        font-size: 20px;
+                        color: #9d8880;
+                        display: block;
+                        position: absolute;
+                        left: 5px;
+                        bottom: 4px;
+                    }
+                    input{
+                        padding-left: 25px;
+                    }
+                }
+                .password{
+                    position: relative;
+                    &:after{
+                        content: "\f023";
+                        font-family: FontAwesome;
+                        font-size: 20px;
+                        color: #9d8880;
+                        display: block;
+                        position: absolute;
+                        left: 8px;
+                        bottom: 3px;
+                    }
+                    input{
+                        padding-left: 25px;
+                    }
+                }
+                .button{
+                    text-align: right;
+                    button{
+                        width: 125px;
+                    }
+                }
+            }
+        }
+    }
+    .cart{
+        padding: 50px 0;
+        display: flex;
+        justify-content:space-between;
+        color: #3D1101;
+        aside{
+            width: 220px;
+            h3{
+                font-family: MicrosoftJhengHeiRegular;
+                font-size: 20px;
+                line-height: 32px;
+                text-align: center;
+                margin: 15px 0;
+                &:before{
+                    content: "\f0f5";
+                    font-family: FontAwesome;
+                    font-size: 20px;
+                    color: #3D1101;
+                    margin-right: 5px;
+                }
+            }
+            ul{
+                li{
+                    border-bottom: 1px solid #3D1101;
+                    a{
+                        padding: 5px;
+                        color: #3D1101;
+                        display: block;
+                        &.active{
+                            color: #fff;
+                            background: #3D1101;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //平板
+    @include pad-width{
+        .features{
+            padding: 50px 30px;
+        }
+        .chef{
+            .img{
+                img{
+                    width: 370px;
+                }
+            }
+        }
+        .restaurant{
+            &>div{
+                .map{
+                    iframe{
+                        width: 363px;
+                    }
+                }
+                .form{
+                    width: 363px;
+                }
+            }
+        }
+    }
+    //手機
+    @include phone-width{
+        .features{
+            padding: 50px 30px;
+            h2{
+                width: 100%;
+                &:before, &:after{
+                    display: none;
+                }
+            }
+            ul{
+                width: 260px;
+                flex-direction:column;
+                margin: 0 auto;
+                li{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .chef{
+            flex-direction:column;
+            height: auto;
+            &:before, &:after{
+                display: none;
+            }
+            .img {
+                img{
+                    width: 100%;
+                }
+            }
+            article{
+                padding: 30px;
+            }
+        }
+        .customer{
+            padding: 50px 10px;
+            ul{
+                flex-direction:column;
+                li{
+                    margin-bottom: 30px;
+                }
+                article{
+                    width: 100%;
+                }
+            }
+        }
+        .restaurant{
+            height: auto;
+            padding: 50px 10px;
+            &>div{
+                flex-direction:column;
+                .map{
+                    margin-bottom: 30px;
+                    iframe{
+                        width: 100%;
+                    }
+                }
+                .form{
+                    width: 100%;
+                }
+            }
+        }
+        .register{
+            padding: 50px 10px;
+            &>section{
+                width: 100%;
+                height: auto;
+                &>div{
+                    flex-direction:column;
+                    .des{
+                        width: 100%;
+                        margin-bottom: 30px;
+                    }
+                    .form{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

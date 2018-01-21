@@ -1,0 +1,92 @@
+@import '../helpers/_mixin';
+
+/** header **/
+header{
+    width: 100%;
+    height: 56px;
+    display: flex;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    &>section{
+        margin: 0 auto;
+        display: flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    h1{
+        a{
+            font-family: NotoSansCJKtc-Black;
+            font-size: 24px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+        }
+    }
+    nav{
+        display: flex;
+        .menu{
+            color: #ffffff;
+            display: none;
+            span{
+                height: 30px;
+                width: 30px;
+                display: block;
+                text-indent: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                position:relative;
+                &:before{
+                    font-size: 30px;
+                    content: "\f0c9";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                    font-family: FontAwesome;
+                    position:absolute;
+                    top: -3px;
+                    left: -30px;
+                }
+            }
+        }
+        ul{
+            display: flex;
+            a{
+                font-family: MicrosoftJhengHeiRegular;
+                font-size: 16px;
+                color: #FFFFFF;
+                letter-spacing: 3px;
+            }
+        }
+        li+li{
+            margin-left: 30px;
+        }
+    } 
+    //電腦版
+    @include pc-width{
+        &>section{
+            width: 1024px;
+        }
+    }
+    //平板
+    @include pad-width{
+        padding: 0 20px;
+        &>section{
+            width: 100%;
+        }
+    }
+    //手機
+    @include phone-width{
+        padding: 0 10px;
+        &>section{
+            width: 100%;
+        }
+        nav{
+            .menu{
+                display: block;
+            }
+            ul{
+                display: none;
+            }
+        }
+    }
+}

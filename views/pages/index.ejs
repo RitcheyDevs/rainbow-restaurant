@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel='stylesheet' href='/css/app.css' />
+  </head>
+  <body>
+    <% include ../partials/header %>
+    <% include ../partials/ad %>
+    <main>
+      <section class="features">
+        <h2>客人總是在詢問<br>這麼好吃的秘訣是什麼</h2>
+        <ul>
+          <li>
+            <img src="img/feature_1.png" srcset="img/feature_1@2x.png 2x">
+            <h3>台灣本土蔬菜</h3>
+            <p>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique. Nam vel iaculis mauris.</p>
+          </li>
+          <li>
+            <img src="img/feature_2.png" srcset="img/feature_2@2x.png 2x">
+            <h3>專業米其林廚師</h3>
+            <p>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique. Nam vel iaculis mauris.</p>
+          </li>
+          <li>
+            <img src="img/feature_3.png" srcset="img/feature_3@2x.png 2x">
+            <h3>對於專業不能退讓</h3>
+            <p>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique. Nam vel iaculis mauris.</p>
+          </li>
+        </ul>
+      </section>
+      <section class="chef">
+        <div class="img">
+          <img src="img/main_chef_brown.png" srcset="img/main_chef_brown@2x.png 2x">
+        </div>
+        <article>
+          <h2>今日主廚：帕金森、梅在帕</h2>
+          <h3>Tody Chef: Plum in Shock</h3>
+          <p>Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius. Donec sit amet ligula eget nisi sodales egestas. Aliquam interdum dolor aliquet dolor sollicitudin fermentum. Donec congue lorem a molestie bibendum.</p>
+        </article>
+      </section>
+      <section class="customer">
+        <h2>聽聽別人的感想</h2>
+        <ul>
+          <li>
+            <img src="img/avatar_1.png" srcset="img/avatar_1@2x.png 2x">
+            <article>
+              <h3>高雄一口吃</h3>
+              <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
+              <em> -- 產品經理</em>
+            </article>
+          </li>
+          <li>
+            <img src="img/avatar_2.png" srcset="img/avatar_2@2x.png 2x">
+            <article>
+              <h3>廟口小霸王</h3>
+              <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
+              <em> -- 金身道士</em>
+            </article>
+          </li>
+          <li>
+            <img src="img/avatar_3.png" srcset="img/avatar_3@2x.png 2x">
+            <article>
+              <h3>春天也來了</h3>
+              <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
+              <em> -- 美麗萬分</em>
+            </article>
+          </li>
+        </ul>
+      </section>
+      <section class="restaurant">
+        <h2>我們的位置不太夠坐<br>要不要先定位呢？</h2>
+        <div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.301340595632!2d120.29836466463789!3d22.605219687470033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e037799f9afb1%3A0xb9f297a86cf40dfb!2z6auY6ZuE6Luf6auU56eR5oqA5ZyS5Y2A!5e0!3m2!1szh-TW!2stw!4v1516519845983" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+          <div class="form">
+            <form action="/reserve" method="post">
+              <!-- 偷放 csrfToken -->
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <div>
+                <label for="name">姓名</label>
+                <input type="text" name="name" id="name" placeholder="請輸入姓名">
+              </div>
+              <div>
+                <label for="phone">電話</label>
+                <input type="phone" name="phone" id="phone" placeholder="請輸入電話">
+              </div>
+              <div>
+                <label for="email">信箱</label>
+                <input type="email" name="email" id="email" placeholder="請輸入信箱">
+              </div>
+              <div>
+                <label for="count">人數</label>
+                <input type="number" name="count" id="count" placeholder="請輸入人數">
+              </div>
+              <div>
+                <label for="isVegetarian">是否需要素食</label>
+                <input type="radio" name="isVegetarian" value="true" checked> 是
+                <input type="radio" name="isVegetarian" value="false" checked> 否
+              </div>
+              <div class="button">
+                <button type="reset">取消</button>
+                <button type="submit">送出</button>
+              </div>
+            </form> 
+          </div>
+        </div>
+      </section>
+    </main>
+    <% include ../partials/footer %>
+  </body>
+</html>
