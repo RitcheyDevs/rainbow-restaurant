@@ -1,0 +1,55 @@
+[{
+    "chName": "經典漢堡套餐1",
+    "enName": "Classic Hamburger Package 1",
+    "tags": {
+        "只愛吃薯條": false,
+        "加熱就可食": true,
+        "不敗漢堡系列": true
+    },
+    "price": 120,
+    "normalImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_1.png?alt=media&token=a4f152d1-4732-4bf3-aad5-d315b978b403",
+    "retinaImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_1%402x.png?alt=media&token=98e0ee7e-b3b8-4d82-ae8d-7639f98c4610",
+    "hot": true
+},
+{
+    "chName": "加熱就可食",
+    "enName": "hot hot",
+    "tags": {
+        "只愛吃薯條": true,
+        "加熱就可食": true,
+        "不敗漢堡系列": false
+    },
+    "price": 320,
+    "normalImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_2.png?alt=media&token=d8c6dbbf-b1aa-467f-ad66-94c0be5c5418",
+    "retinaImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_2%402x.png?alt=media&token=0b0a0304-72d8-4b66-b041-4b2d763857de",
+    "hot": false
+},
+{
+    "chName": "經典漢堡套餐2",
+    "enName": "Classic Hamburger Package 2",
+    "tags": {
+        "只愛吃薯條": true,
+        "加熱就可食": false,
+        "不敗漢堡系列": true
+    },
+    "price": 320,
+    "normalImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_3.png?alt=media&token=d92f87be-febe-4a50-b130-6d5059656bd8",
+    "retinaImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_3%402x.png?alt=media&token=74c407fd-3379-4e9d-b8e8-518dbbf47ea9",
+    "hot": false
+},
+{
+    "chName": "只愛吃薯條",
+    "enName": "fries",
+    "tags": {
+        "只愛吃薯條": true,
+        "加熱就可食": false,
+        "不敗漢堡系列": false
+    },
+    "price": 360,
+    "normalImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_4.png?alt=media&token=8132b3c6-9db5-476e-8b3e-9dd37eec03db",
+    "retinaImg": "https://firebasestorage.googleapis.com/v0/b/rainbow-restaurant.appspot.com/o/product_4%402x.png?alt=media&token=af18fc3b-1a51-45bd-b3cb-4c12ebc99f60",
+    "hot": true
+}
+]
+
+
