@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "npm install && gulp",
     "start": "node ./bin/www",
     "start-pro": "NODE_ENV=production nodemon ./bin/www",
     "dev": "gulp",
