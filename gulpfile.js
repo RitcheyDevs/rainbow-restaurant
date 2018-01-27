@@ -1,24 +1,22 @@
-const gulp = require('gulp')
-const gutil = require('gulp-util')
-const clean = require('gulp-clean')
-const plumber = require('gulp-plumber')
-const rename = require('gulp-rename')
-const replace = require('gulp-replace')
-const sass = require('gulp-sass')
-const postcss = require('gulp-postcss')
-const postcssImport = require('postcss-import')
-const precss = require('precss')
-const csso = require('postcss-csso')
-const assets  = require('postcss-assets')
-const autoprefixer = require('autoprefixer')
-const revAll = require('gulp-rev-all')
-const changed = require('gulp-changed')
-const config = require('config')
-const webpack = require('webpack')
-const nodemon = require('nodemon')
-const webpackConfig = config.pro ?
-  require('./config/webpack.config.pro.js') :
-  require('./config/webpack.config.dev.js')
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const clean = require('gulp-clean');
+const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const postcssImport = require('postcss-import');
+const precss = require('precss');
+const csso = require('postcss-csso');
+const assets  = require('postcss-assets');
+const autoprefixer = require('autoprefixer');
+const revAll = require('gulp-rev-all');
+const changed = require('gulp-changed');
+const config = require('config');
+const webpack = require('webpack');
+const nodemon = require('nodemon');
+const webpackConfig = config.pro ? require('./config/webpack.config.pro.js') : require('./config/webpack.config.dev.js');
 
 gulp.task('clean:css', function () {
   return gulp.src('build/css', {read: false})
@@ -51,7 +49,7 @@ gulp.task('css', ['clean:css'], function () {
     .pipe(sass(
       {
         outputStyle: 'compressed',
-        includePaths: ['node_modules/susy/sass', 'node_modules/font-awesome/scss']
+        includePaths: ['node_modules/font-awesome/scss']
       }
     ).on('error', sass.logError))
     .pipe(postcss(plugins))
