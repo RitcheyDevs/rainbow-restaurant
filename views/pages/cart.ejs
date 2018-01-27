@@ -13,25 +13,41 @@
         <aside>
           <h3>線上訂購美食</h3>
           <ul>
-            <li><a href="">全部 (23)</a></li>
-            <li><a href="">只愛吃薯條 (18)</a></li>
-            <li><a href="">加熱就可食 (1)</a></li>
-            <li><a href="">不敗漢堡系列 (4)</a></li>
+            <% for(let i=0; i < tagObject.length; i++){ %>
+              <li><a href="/cart/tag/<%- tagObject[i].name %>"><%- tagObject[i].name %> (<%- tagObject[i].num %>)</a></li>
+            <% } %>
           </ul>
         </aside>
         <section>
           <div class="top">
             <div class="search">
-              <input type="text" placeholder="請輸入關鍵字">
-              <a href="">搜尋</a>
+              <form action="/cart/keyword" method="post">
+                <input type="text" name="keyword" placeholder="請輸入關鍵字">
+                <button type="submit">搜尋</button>
+              </form>
             </div>
-            <ul class="cart">
+            <ul>
               <li><a>結帳去</a></li>
-              <li><a>購物車 <span>1</span></a></li>
+              <li class="shop"><a><em>購物車</em> <span>1</span></a></li>
             </ul>
           </div>
           <div class="content">
-            
+            <ul>
+              <% for(let i=0; i < products.length; i++){ %>
+                <li>
+                  <% if(products[i].hot){ %>
+                    <div class="ribbon-wrapper-hot"><div class="ribbon-hot">熱銷美食</div></div>
+                  <% } %>
+                  <div class="img">
+                    <img src="<%- products[i].normalImg %>" srcset="<%- products[i].retinaImg %>">
+                  </div>
+                  <h5><%- products[i].chName %></h5>
+                  <p><%- products[i].enName %></p>
+                  <span>＄<%- products[i].price %></span>
+                  <a class="add">加入購物車</a>
+                </li>
+              <% } %>
+            </ul>
           </div>
         </section>
       </section>

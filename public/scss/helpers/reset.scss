@@ -21,6 +21,10 @@ ul, ol{
 
 a{
     text-decoration:none;
+    display: block;
+    color: #FF5E45;
+    font-size: 14px;
+    text-align: left;
 }
 
 /** 表單 **/
@@ -54,17 +58,20 @@ form{
     color: #4A4A4A;
 }
 
-button{
+button, .a-button{
+    display: inline-block;
+    vertical-align: top;
     border:none;
     width: 70px;
     height: 32px;
     box-sizing: border-box;
     background: rgba(0,0,0,0.35);
     border-radius: 3px;
-    padding: 0 6px;
+    padding: 6px;
     text-align: center;
     color: #fff;
-    &[type="submit"]{
+    font-size: 16px;
+    &.submit{
         background: #F56C23;
     }
 }

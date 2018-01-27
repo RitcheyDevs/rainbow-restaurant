@@ -1,19 +1,23 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
 
-var assetPath = require('./helpers/asset-path');
-var config = require('config');
+const assetPath = require('./helpers/asset-path');
+const config = require('config');
 
-var index = require('./routes/index');
-var login = require('./routes/login');
-var register = require('./routes/register');
-var cart = require('./routes/cart');
+const index = require('./routes/index');
+const login = require('./routes/login');
+const register = require('./routes/register');
+const cart = require('./routes/cart');
+const system = require('./routes/system');
 
-var app = express();
+
+let app = express();
 
 app.use(assetPath({
   prefix: config.cdn.prefix,
@@ -31,11 +35,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(expressValidator());
+app.use(cookieParser());
+app.use(session({
+  secret: 'keyboard cat',  // 加強私密安全
+  resave: false,    // 每次呼叫要不要寫入node.js (建議改成true)
+  saveUninitialized: true,
+  cookie: { secure: true } // 可以去設定 cookie
+}));
 
 app.use('/', index);
+app.use('/index', index);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/cart', cart);
+app.use('/system', system);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
