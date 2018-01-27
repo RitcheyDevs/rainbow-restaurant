@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "start-pro": "NODE_ENV=production nodemon ./bin/www",
     "dev": "gulp",
     "build": "NODE_ENV=production gulp build"
