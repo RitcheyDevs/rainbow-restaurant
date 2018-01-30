@@ -1,10 +1,8 @@
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./serviceAccountKey.json");
-
 // 設定 firebase 連接
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+    credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CONFIG)),
     databaseURL: "https://rainbow-restaurant.firebaseio.com"
 });
   
