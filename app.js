@@ -1,4 +1,5 @@
 const express = require('express');
+const engine = require('ejs-locals');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -25,6 +26,7 @@ app.use(assetPath({
 }))
 
 // view engine setup
+app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 

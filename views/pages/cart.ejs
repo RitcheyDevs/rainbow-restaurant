@@ -1,57 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel='stylesheet' href='/css/app.css' />
-  </head>
-  <body>
-    <% include ../partials/header %>
-    <% include ../partials/ad %>
-    <main>
-      <section class="cart">
-        <aside>
-          <h3>線上訂購美食</h3>
-          <ul>
-            <% for(let i=0; i < tagObject.length; i++){ %>
-              <li><a href="/cart/tag/<%- tagObject[i].name %>"><%- tagObject[i].name %> (<%- tagObject[i].num %>)</a></li>
+<% layout('../partials/layout') -%>
+<% block('ad', partial('../partials/ad')) -%>
+<section class="cart">
+  <aside>
+    <h3>線上訂購美食</h3>
+    <ul>
+      <% for(let i=0; i < tagObject.length; i++){ %>
+        <li><a href="/cart/tag/<%- tagObject[i].name %>"><%- tagObject[i].name %> (<%- tagObject[i].num %>)</a></li>
+      <% } %>
+    </ul>
+  </aside>
+  <section>
+    <div class="top">
+      <div class="search">
+        <form action="/cart/keyword" method="post">
+          <input type="text" name="keyword" placeholder="請輸入關鍵字">
+          <button type="submit">搜尋</button>
+        </form>
+      </div>
+      <ul>
+        <li><a>結帳去</a></li>
+        <li class="shop"><a><em>購物車</em> <span>1</span></a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <ul>
+        <% for(let i=0; i < products.length; i++){ %>
+          <li>
+            <% if(products[i].hot){ %>
+              <div class="ribbon-wrapper-hot"><div class="ribbon-hot">熱銷美食</div></div>
             <% } %>
-          </ul>
-        </aside>
-        <section>
-          <div class="top">
-            <div class="search">
-              <form action="/cart/keyword" method="post">
-                <input type="text" name="keyword" placeholder="請輸入關鍵字">
-                <button type="submit">搜尋</button>
-              </form>
+            <div class="img">
+              <img src="<%- products[i].normalImg %>" srcset="<%- products[i].retinaImg %>">
             </div>
-            <ul>
-              <li><a>結帳去</a></li>
-              <li class="shop"><a><em>購物車</em> <span>1</span></a></li>
-            </ul>
-          </div>
-          <div class="content">
-            <ul>
-              <% for(let i=0; i < products.length; i++){ %>
-                <li>
-                  <% if(products[i].hot){ %>
-                    <div class="ribbon-wrapper-hot"><div class="ribbon-hot">熱銷美食</div></div>
-                  <% } %>
-                  <div class="img">
-                    <img src="<%- products[i].normalImg %>" srcset="<%- products[i].retinaImg %>">
-                  </div>
-                  <h5><%- products[i].chName %></h5>
-                  <p><%- products[i].enName %></p>
-                  <span>＄<%- products[i].price %></span>
-                  <a class="add">加入購物車</a>
-                </li>
-              <% } %>
-            </ul>
-          </div>
-        </section>
-      </section>
-    </main>
-    <% include ../partials/footer %>
-  </body>
-</html>
+            <h5><%- products[i].chName %></h5>
+            <p><%- products[i].enName %></p>
+            <span>＄<%- products[i].price %></span>
+            <a class="add">加入購物車</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </section>
+</section>
