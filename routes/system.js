@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var firebase = require('../config/firebase');
+var firebaseDB = require('../connections/firebase_admin_connect');
 
 /* GET login listing. */
 router.get('/', function(req, res, next) {
@@ -9,13 +9,13 @@ router.get('/', function(req, res, next) {
 
 router.post('/addProduct', function(req, res, next) {
   let data = req.body.product;
-  firebase.ref('products').push(JSON.parse(data));
+  firebaseDB.ref('products').push(JSON.parse(data));
   res.redirect('/index');
 });
 
 router.post('/addTag', function(req, res, next) {
   let data = req.body.tag;
-  firebase.ref('tags').push(data);
+  firebaseDB.ref('tags').push(data);
   res.redirect('/');
 });
 

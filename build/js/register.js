@@ -1,6 +1,6 @@
-webpackJsonp([2],[
-/* 0 */,
-/* 1 */
+webpackJsonp([0],{
+
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,6 +9,8 @@ webpackJsonp([2],[
 $(".submit").click(function () {
     var form = $("#form").serializeArray();
     var formObject = JSON.parse(JSON.stringify(form));
+    var password = void 0;
+    var checkPassword = void 0;
 
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
@@ -18,9 +20,17 @@ $(".submit").click(function () {
         for (var _iterator = formObject[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var item = _step.value;
 
+
             if (!item.value) {
-                alert('有必填欄位沒填寫！');
+                alert('有欄位沒填寫！');
                 return;
+            } else {
+                if (item.name === 'password') {
+                    password = item.value;
+                }
+                if (item.name === 'checkPassword') {
+                    checkPassword = item.value;
+                }
             }
         }
     } catch (err) {
@@ -38,8 +48,13 @@ $(".submit").click(function () {
         }
     }
 
+    if (password !== checkPassword) {
+        alert('密碼與確認密碼非一致！');
+        return;
+    }
+
     $.ajax({
-        url: "/reserve",
+        url: "/register",
         method: "POST",
         data: form
     }).done(function (res) {
@@ -49,12 +64,8 @@ $(".submit").click(function () {
         alert(textStatus);
     });
 });
-
-$('.link a').click(function () {
-    var target = $(this).attr('href').replace('/', '');;
-    $("html, body").animate({ scrollTop: $(target).offset().top }, 1000);
-});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
-],[1]);
+
+},[3]);

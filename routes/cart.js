@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var firebase = require('../config/firebase');
+var firebaseDB = require('../connections/firebase_admin_connect');
 
 /* 產品頁 */
 router.get('/', function(req, res, next) {
-  firebase.ref('products').once('value', (snapshot)=>{
+  firebaseDB.ref('products').once('value', (snapshot)=>{
     let data = [];
     let tagName = [];
     let tagObject = [];
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 /* 取得單一產品功能 */
 router.get('/tag/:name', function(req, res, next) {
   let queryTag = req.params.name;
-  firebase.ref('products').once('value', (snapshot)=>{
+  firebaseDB.ref('products').once('value', (snapshot)=>{
     let data = [];
     let tagName = [];
     let tagObject = [];
@@ -40,7 +40,7 @@ router.get('/tag/:name', function(req, res, next) {
 /* 搜尋功能 */
 router.post('/keyword', function(req, res, next) {
   let queryTag = req.body.keyword;
-  firebase.ref('products').once('value', (snapshot)=>{
+  firebaseDB.ref('products').once('value', (snapshot)=>{
     let data = [];
     let tagName = [];
     let tagObject = [];

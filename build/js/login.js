@@ -1,6 +1,6 @@
-webpackJsonp([2],[
-/* 0 */,
-/* 1 */
+webpackJsonp([1],{
+
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,7 +19,7 @@ $(".submit").click(function () {
             var item = _step.value;
 
             if (!item.value) {
-                alert('有必填欄位沒填寫！');
+                alert('有欄位沒填寫！');
                 return;
             }
         }
@@ -39,7 +39,7 @@ $(".submit").click(function () {
     }
 
     $.ajax({
-        url: "/reserve",
+        url: "/login",
         method: "POST",
         data: form
     }).done(function (res) {
@@ -49,12 +49,8 @@ $(".submit").click(function () {
         alert(textStatus);
     });
 });
-
-$('.link a').click(function () {
-    var target = $(this).attr('href').replace('/', '');;
-    $("html, body").animate({ scrollTop: $(target).offset().top }, 1000);
-});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
-],[1]);
+
+},[2]);
