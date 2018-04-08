@@ -18,6 +18,7 @@ router.post('/', function (req, res) {
       .then(function(user){
           // 成功
           req.session.uid = user.uid;
+          req.session.user = user.email;
           res.send({
             "message": "登入成功！",
             "returnCode": 200

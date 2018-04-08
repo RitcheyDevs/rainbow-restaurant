@@ -17,6 +17,7 @@ $(".submit").click(()=>{
     .done(function( res ) {
         $("#form")[0].reset();
         alert(res.message);
+        window.location.href = window.location.origin +'/index';
     })
     .fail(function( res ) {
         alert(textStatus);

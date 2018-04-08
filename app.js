@@ -41,10 +41,14 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(session({
   secret: 'keyboard cat',  // 加強私密安全
-  resave: false,    // 每次呼叫要不要寫入node.js (建議改成true)
-  saveUninitialized: true,
-  cookie: { secure: true } // 可以去設定 cookie
+  resave: true,    // 每次呼叫要不要寫入node.js (建議改成true)
+  saveUninitialized: true
 }));
+
+app.use(function(req, res, next){
+  res.locals.session = req.session;
+  next();
+});
 
 app.use('/', index);
 app.use('/index', index);
